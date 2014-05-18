@@ -1,0 +1,31 @@
+<html ng-app="jsonTranslateApp">
+    <head>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+        <script src="./bower_components/angular/angular.js"></script>
+        <script src="./controllers/home.js"></script>
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="screen" />
+        
+    </head>
+    <body ng-controller="homeController">
+<div class="container">
+        <textarea ng-model="rawJson" class="form-control" cols="50" rows="20"></textarea>
+    
+        <p>Language source : <input type="text" class="form-control" ng-model="lgsrc"></p>
+        <p>Language destination : <input type="text" class="form-control" ng-model="lgdest"></p>
+        <p>Api key : <input type="text" class="form-control" ng-model="apikey"></p>
+        
+        <pre>{{ objectJson | json }}</pre>
+        
+        <ul class="list-unstyled">
+            <li ng-repeat="(key, value) in objectJson" class="form-inline form-group">
+                <input type="text" class="form-control" ng-model="key">
+                <input type="text" class="form-control" ng-model="objectJson[key]">
+                <a class="btn btn-info" ng-click="translateElement(key)">Translate</a>
+                <a class="btn btn-danger" ng-click="removeElement(key)">Delete</a>
+            </li>
+        </ul>
+        
+        <button ng-click="addNew()" class="btn btn-success">Add element</button>
+    </body>
+    </div>
+</html>
