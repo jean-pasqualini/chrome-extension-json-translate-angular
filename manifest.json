@@ -1,0 +1,27 @@
+{
+
+  "manifest_version": 2,
+
+
+  "name": "Json translate helper",
+
+  "description": "This extension help translate i18n writted in json",
+
+  "version": "1.0",
+
+
+  "permissions": [
+
+    "https://secure.flickr.com/"
+
+  ],
+
+  "browser_action": {
+
+    "default_icon": "icon.png",
+
+    "default_popup": "popup.html"
+
+  }
+
+}
