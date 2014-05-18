@@ -63,7 +63,7 @@ jsonTranslateApp.controller('homeController', function($scope, $http)
     
     $scope.addNew = function()
     {
-       $scope.objectJson[_.size($scope.objectJson) + 1] = "one value";  
+       $scope.objectJson[(new Date()).getTime()] = "one value";  
     };
     
     $scope.objectJson = {
